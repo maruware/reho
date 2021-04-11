@@ -24,7 +24,7 @@ func main() {
 			if err != nil {
 				return err
 			}
-			fmt.Printf("%s", replaced)
+			fmt.Printf("%s\n", replaced)
 
 			return nil
 		},
