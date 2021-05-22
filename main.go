@@ -12,6 +12,14 @@ func main() {
 	app := &cli.App{
 		Name:  "reho",
 		Usage: "replace host of URL",
+		Flags: []cli.Flag{
+			&cli.BoolFlag{
+				Name:    "location",
+				Aliases: []string{"L"},
+				Value:   false,
+				Usage:   "location redirect",
+			},
+		},
 		Action: func(c *cli.Context) error {
 			if c.NArg() < 2 {
 				return fmt.Errorf("shortage args")
@@ -20,7 +28,9 @@ func main() {
 			src := c.Args().Get(0)
 			dhost := c.Args().Get(1)
 
-			replaced, err := ReplaceHost(src, dhost)
+			l := c.Bool("location")
+
+			replaced, err := ReplaceHost(src, dhost, l)
 			if err != nil {
 				return err
 			}
