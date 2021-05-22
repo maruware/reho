@@ -23,7 +23,7 @@ https://example.com/chromecast/answer/10087405
 
 ## Install
 
-See [Releases](/releases)
+See [Releases](https://github.com/maruware/reho/releases)
 
 or
 
